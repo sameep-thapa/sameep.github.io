@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form validation</title>
+    <link rel="stylesheet" href="contact.css">
+    <script type="text/javascript" src="home.js"></script>
+    
+</head>
+<body>
+    <div class="header">
+    
+        <a href="index.html"><img src="images/logo1.png"></a>
+      
+      </div>
+      
+      <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="books.html">Products</a>
+        <a href="Blog.html">Blog</a>
+        <a href="researchpage.html">Research</a>
+        <a href="contact.html">About Us</a>
+      </div>
+    </div>
+
+    <div class="slider">
+        <div id="slider"><img name="slide" src="images/img1.jpg"> <!----using image slider in header---->
+            
+        </div>
+    <script type="text/javascript">
+        var images = [];
+var time = 1800;
+var i = 0;
+
+images[0] = 'images/img1.jpg';
+images[1] = 'images/img2.jpg';
+images[2] = 'images/img3.jpg';
+
+
+function changeImg() {
+    document.slide.src = images[i];
+
+    if (i < images.length - 1) {
+        i++;
+    } else {
+        i = 0;
+    }
+    setTimeout('changeImg()', time);
+}
+window.onload = changeImg;
+    </script>
+
+    <div class="container">
+    <!---creating div named container ----->
+    
+    <div class="form-content">
+    <!------creating form ------>
+
+    <form name="check" onsubmit="validation()">
+
+        <p>First Name: <input type="text" name="fname" placeholder="Enter Your Name"></p>
+        <br>
+        <p>Last Name: <input type="text" name="lname" placeholder="Enter Your Surname"></p>
+        <br>  
+
+        <p>Contact Number: <input type="text" name="contact" placeholder="Enter contact"></p>
+        <br>
+        <p>Gender: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="gender" value="check"> Male
+    
+        <input type="radio" name="gender" value="check"> Female
+
+        </p>
+        <br>
+        <p>Message :<br>
+
+        
+        <textarea name="message" rows="5" cols="20" placeholder="Enter your message here..." style="width: 250px;"></textarea></p>
+
+        <p><input type="submit" name="login" value="Login" class="login"></p>
+    </form>
+</div>
+
+</script>
+ 
+<script type="text/javascript">
+
+function validation()
+
+{
+    var first_name =document.forms["check"]["fname"].value;
+
+    var fender =document.forms["check"]["gender"].value;
+
+    var last_name=document.forms["check"]["lname"].value;
+
+    var message =document.forms["check"]["message"].value;
+
+        if (first_name==""|| last_name=="")
+ {
+
+alert("All fields are required");
+
+ }
+else if (first_name=="Ram" && last_name=="536567"){
+alert("welcome to the the webpage")
+}
+
+else{
+     alert("Thank for login");
+}
+
+}
+
+ 
+
+   
+
+ 
+
+</script>
+
+</body>
+
+</html>
